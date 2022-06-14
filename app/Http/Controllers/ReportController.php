@@ -10,6 +10,7 @@ class ReportController extends Controller
 {
     public function __invoke(Request $request)
     {
+        info("Received email");
         foreach ($request->allFiles() as $file) {
             $filePath = "files";
             Storage::putFileAs($filePath, $file, 'booking_report.csv');
